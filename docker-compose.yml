@@ -1,0 +1,15 @@
+version: '3'
+services:
+  hive:
+    build:
+      context: .
+    image: winedocker
+    volumes:
+      - local-volume:/root/wine-sources
+
+volumes:
+  local-volume:
+    driver_opts:
+      type: volume
+      device: ${HOME}/wine-sources
+      o: bind
